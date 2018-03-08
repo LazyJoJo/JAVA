@@ -19,7 +19,7 @@ public class master {
         }
 
         Employee[] a = new Employee[employeeList.size()];
-        employeeList.toArray(a);
+        employeeList.toArray(a);//正确写法
         System.out.println(a[1].getName());
 
         //下面这种写法是错误的

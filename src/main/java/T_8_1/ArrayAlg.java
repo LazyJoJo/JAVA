@@ -23,7 +23,7 @@ public class ArrayAlg {
          T max = a[0];
         for (int i = 1; i < a.length; i++) {
             T t = a[i];
-            if(min.compareTo(t)>0)min = t;  //字典顺序
+            if(min.compareTo(t)>0)min = t;  //字典顺序（很多类都实现了这个方法，才能统一的比较）
             if(max.compareTo(t)<0)max = t;
         }
         return new Pair<T>(min,max);
