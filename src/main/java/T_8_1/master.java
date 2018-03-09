@@ -4,6 +4,7 @@ package T_8_1;
 import ArrayList_5_1.Employee;
 import ArrayList_5_1.Manager;
 
+import java.lang.reflect.Method;
 import java.time.LocalDate;
 
 public class master {
@@ -44,6 +45,20 @@ public class master {
         System.out.println("first: "+result.getFirst()+", second: "+result.getSecond());
         PairTest3.maxminBonus(managers,result);
         System.out.println("first: "+result.getFirst().getName()+", second: "+result.getSecond().getName());
+        System.out.println("===========================");
+
+        //===============8-4(泛型反射)
+        String name = "T_8_1.ArrayAlg";
+        try {
+            Class<?> cl = Class.forName(name);
+            GenericReflection.printClass(cl);
+            for(Method m : cl.getDeclaredMethods()){
+                GenericReflection.printMethod(m);
+            }
+        }catch (ClassNotFoundException e){
+            e.printStackTrace();
+        }
+
 
     }
 }
