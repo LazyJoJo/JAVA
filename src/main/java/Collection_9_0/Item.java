@@ -2,7 +2,7 @@ package Collection_9_0;
 
 import java.util.Objects;
 
-public class Item implements Comparable<Item>{
+public class Item implements Comparable<Item>,test{
     private String description;
     private int partNumber;
 
