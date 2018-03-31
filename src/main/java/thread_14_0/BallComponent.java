@@ -16,15 +16,32 @@ public class BallComponent extends JPanel {
 
     private List<Ball> balls = new ArrayList<>();
 
+     /*
+      * @author       LazyJoJo
+      * @date         2018/3/31 10:40
+      * @description  add the ball into the component
+      */
     public void add(Ball b){
         balls.add(b);
     }
+     /*
+      * @author       LazyJoJo
+      * @date         2018/3/31 10:41
+      * @description  paint the component
+      */
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2 = (Graphics2D) g;
-        for(Ball b : balls){
-            g2.fill(b.getShape());
+
+        //success
+        for (int i = 0; i < balls.size(); i++) {
+            g2.fill(balls.get(i).getShape());
         }
+        //error  java.util.ConcurrentModificationException
+        //出现错误的原因，遍历的时候添加或删除元素
+//        for(Ball b : balls){
+//            g2.fill(b.getShape());
+//        }
     }
      /*
       * @author       LazyJoJo

@@ -20,7 +20,7 @@ public class BounceFrame extends JFrame{
         comp = new BallComponent();
         this.add(comp, BorderLayout.CENTER);
         JPanel buttonPanel = new JPanel();
-        addButton(buttonPanel,"Start",event->addBall());//addBall(), 这个方法就相当于一个代码段
+        addButton(buttonPanel,"Start",event->addBallThread());//addBall(), 这个方法就相当于一个代码段
 //      相当于
 //        button.addActionListener(new ActionListener(){
 //            @Override
@@ -60,6 +60,11 @@ public class BounceFrame extends JFrame{
          }catch (InterruptedException e){
 
          }
+     }
+     public void addBallThread(){
+         Runnable r = ()-> addBall();
+         Thread t = new Thread(r);
+         t.start();
      }
 
 }
